@@ -1,4 +1,4 @@
-#define FASTLED_INTERNAL
+#define FASTLED_INTERNAL // Unterdrückt die nervige Fehler Info
 #include <FastLED.h>
 #include <EEPROM.h>
 
@@ -39,7 +39,7 @@ void loop() {
     }
     for(int blink=0; blink<blinkcount; blink++) {
       
-      for(int i=36; i<72; i++) {      //beginnt bei LED Nr. 36 aufbauend bis 72
+      for(int i=36; i<72; i++) {      // beginnt bei LED Nr. 36 aufbauend bis 72
         if(buttonStateLeft == HIGH) {
           leds[i].setRGB(255,130,0);
         } else {
