@@ -20,3 +20,5 @@ For the color code of resistors see this great page: https://www.tweaking4all.co
 
 
 ![Wire](https://github.com/Robiv8/TurnSignal-WS2812B/blob/master/TurnLight.png "Wire")
+
+[![Video](http://img.youtube.com/vi/LjFCRdPBISA/0.jpg)](http://www.youtube.com/watch?v=LjFCRdPBISA "VideoTurneLight")
