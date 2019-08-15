@@ -15,4 +15,4 @@ Pin 2 -> one side of the switch.
 
 For the color code of resistors see this great page: https://www.tweaking4all.com/hardware/resistor-color-calculator/
 
-![Wire](/github.com/Robiv8/TurnSignal-WS2812B/blob/master/TurnLight.png?raw=true "Wire")
+![Wire](https://github.com/Robiv8/TurnSignal-WS2812B/blob/master/TurnLight.png "Wire")
