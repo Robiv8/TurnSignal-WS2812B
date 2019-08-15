@@ -13,6 +13,10 @@ From fGND -> 10K Ohm resistor -> to pin 5. buttonright
 Pin 2 -> one side of the switch.
 +5V (Arduino) -> other side of the switch.
 
+This is just the test or the test setup.
+For real use, the LEDs should be powered by an external 5V power supply. The Arduino does not have enough power to supply the LEDs permanently.
+
 For the color code of resistors see this great page: https://www.tweaking4all.com/hardware/resistor-color-calculator/
+
 
 ![Wire](https://github.com/Robiv8/TurnSignal-WS2812B/blob/master/TurnLight.png "Wire")
