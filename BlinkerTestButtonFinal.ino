@@ -1,4 +1,4 @@
-#define FASTLED_INTERNAL // Unterdrückt die nervige Fehler Info
+#define FASTLED_INTERNAL // Suppress the annoying error info
 #include <FastLED.h>
 #include <EEPROM.h>
 
@@ -22,7 +22,8 @@ void setup()
   FastLED.addLeds<WS2811, PIN, GRB>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
   pinMode(BUTTONLEFT,  INPUT);
   pinMode(BUTTONRIGHT, INPUT);
-  LEDS.setBrightness(100);
+  LEDS.setBrightness(200); // If powered with external power supply then 200-255,
+                           // For tests with the 5V from the Arduino max. 100-150 recommended
 }
 
 void loop() { 
@@ -39,38 +40,21 @@ void loop() {
     }
     for(int blink=0; blink<blinkcount; blink++) {
       
-      for(int i=36; i<72; i++) {      // beginnt bei LED Nr. 36 aufbauend bis 72
+      for(int i=36; i<72; i++) {      // starts at LED no. 36 building up to 72
         if(buttonStateLeft == HIGH) {
           leds[i].setRGB(255,130,0);
         } else {
-          leds[72-i].setRGB(255,130,0); // beginnt bei LED Nr. 72 bis i (i=36)
+          leds[72-i].setRGB(255,130,0); // starts at LED no. 72 to i (i = 36)
         }
-/*      for(int i=0; i<NUM_LEDS; i++) {
-        if(buttonStateLeft == HIGH) {
-          leds[i].setRGB(255,130,0);
-        } else {
-          leds[NUM_LEDS-i].setRGB(255,130,0);
-        }
-        */
+
         FastLED.show();
-        delay(5.5); // Aufbau geschwindigkeit von Pixel zu Pixel
+        delay(5.5); // Build speed from pixel to pixel
       }
       
-      delay(200); //Standdauer des Vollen Lichts
+      delay(200); // Duration of the full light
       
-      // Instant black after swipe
-      setAll(0,0,0);
-      //for(int i=0; i<NUM_LEDS; i++) {
-      //  if(buttonStateLeft == HIGH) {
-      //    leds[i].setRGB(0,0,0);
-      //  } else {
-      //    leds[NUM_LEDS-i].setRGB(0,0,0);
-      //  }
-      //  FastLED.show();
-      //  delay(10);
-      
-      //}
-      delay(300); //Dauer bis erneut beginnt.
+      setAll(0,0,0); // Instant black after swipe
+      delay(300); // Duration until it starts again.
     }
     setAll(0,0,0);
   }
