@@ -6,10 +6,14 @@
 #define blinkcount 3
 
 CRGB leds[NUM_LEDS];
+// PIN // ARDUINO :: WemosD1mini
+//  2  //   D2    ::     D4
+//  3  //   D3    ::     D2
+//  4  //   D4    ::     D1
 
-#define PIN 2 
-#define BUTTONLEFT  4
-#define BUTTONRIGHT 5
+#define PIN 2
+#define BUTTONLEFT  3
+#define BUTTONRIGHT 4
 
 byte selectedEffect   = 0;
 int  buttonStateLeft  = 0;
